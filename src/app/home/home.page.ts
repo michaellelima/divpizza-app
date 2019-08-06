@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  catalogo:Array<Object> = []
+
+  ionViewDidEnter(){
+      console.log('EXECUTOU O VIEW DID ENTER')
+      this.catalogo.push({
+        nome: 'Calabresa Gourmet',
+        descricao:'queijo branco,calabresa,azeitona, cebola, azeite trufado paganini, manjericão e tomate seco',
+        preco:'R$ 72,00'
+      })
+    }
+
+
 
 }
