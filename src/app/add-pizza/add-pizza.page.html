@@ -9,7 +9,8 @@
 
 <ion-content>
   <div class='ion-padding'>
-      <form #form = 'ngForm'(ngSubmit)='salvar(form)'>
+      <form #form = 'ngForm'(ngSubmit)='salvar(form)'><!--ngsubmit para ouvir um evento do tipo submit//chamar
+        ,,, uma funcao quando o botao for pressionado-->
         <ion-item>
           <ion-label position="floating">Qual o nome da pizza?</ion-label><!--para deixar a pergunta acima enquanto o usuario digita-->
           <ion-input name= 'nomePizza' ngModel ></ion-input>
