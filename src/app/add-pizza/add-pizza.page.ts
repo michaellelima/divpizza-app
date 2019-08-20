@@ -14,12 +14,14 @@ export class AddPizzaPage implements OnInit {
   }
 
   salvar(pizza){
-    console.log(pizza);
+    const chavePizza = Math.floor(Math.random() * 999); /*gera um numero aleatorio de 0 a 1*/
+    
       const pizzaDados = pizza.value /*const é uma constante e seu valor nao muda */
+      pizzaDados.id = chavePizza;
       const pizzaDadosString = JSON.stringify(pizzaDados);
       console.log(pizzaDadosString);
 
-      const chavePizza = Math.random() * 999; /*gera um numero aleatorio de 0 a 1*/
+      
       console.log(chavePizza);
       console.log(chavePizza.toString());
 
@@ -30,14 +32,13 @@ export class AddPizzaPage implements OnInit {
   voltarParaHome(){
     this.nav.back()
   }
-   exibirMensagemSucesso(){
-    this.toast.create({
+   async exibirMensagemSucesso(){
+    let criacaoDoToast = await this.toast.create({ //create é uma promisse (todos componentes do ionic sao rodados em promisse)
       message: 'Pizza cadastrada.',
       duration: 2000, 
       color:'dark '
-    }).then(toast => {
-      toast.present()
     })
+    criacaoDoToast.present()
   }
 
 }
