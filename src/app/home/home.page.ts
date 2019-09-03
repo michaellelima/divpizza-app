@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(private menu:ActionSheetController){} 
+  constructor(private menu:ActionSheetController, private route:Router){} 
   
 
   catalogo:Array<Object> = []
@@ -35,7 +36,10 @@ export class HomePage {
       header: 'Opções da pizza n° ' +id,
       buttons: [{
         text: 'Editar Pizza',
-        icon: 'create'
+        icon: 'create',
+        handler: () => {
+          this.route.navigate(['edit-pizza', id])
+        }
       }, {
         text: 'Excluir Pizza',
         icon: 'Trash',

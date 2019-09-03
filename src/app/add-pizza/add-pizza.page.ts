@@ -6,6 +6,7 @@ import { ToastController, NavController } from '@ionic/angular';
   templateUrl: './add-pizza.page.html',
   styleUrls: ['./add-pizza.page.scss'],
 })
+
 export class AddPizzaPage implements OnInit {
 
   constructor(private toast:ToastController, private nav:NavController) { }

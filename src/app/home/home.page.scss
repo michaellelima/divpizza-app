@@ -6,6 +6,21 @@ ion-card{
     --background:white;
 }
 
+ion-card.card-transparente{
+    --background:transparent;
+    ion-card-title{
+        color:white;
+        text-align: center;
+    }
+    box-shadow:none;
+    img {
+        width:30%;
+    }
+    display:flex;
+
+}
+
+
 ion-card-subtitle{
     margin-top:10px;
 
