@@ -37,7 +37,7 @@
               <h2 text-right>{{pizza.precoPizza}}</h2>
             </div>
             <div text-center class ="ion-margin-top">
-              <ion-button color='danger' expand="block" text-rigth>Comprar<ion-icon name ='cart' slot='start'></ion-icon></ion-button>
+              <ion-button color='danger' expand="block" text-rigth (click)="comprar(pizza.id)">Comprar<ion-icon name ='cart' slot='start'></ion-icon></ion-button>
             </div>
           </ion-card-content>
         </ion-card>

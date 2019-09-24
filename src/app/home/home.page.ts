@@ -30,6 +30,10 @@ export class HomePage {
     }
   }
 
+  comprar(id) {
+    this.route.navigate(['comprar-pizza',id])
+    
+  }
   async exibirOpcoes(id){
     console.log('clicou na opcao '+id); 
     let criacaoMenu = await this.menu.create({
