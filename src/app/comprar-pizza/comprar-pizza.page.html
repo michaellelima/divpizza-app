@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>comprar-pizza</ion-title>
+    <ion-buttons>
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>comprar {{nomePizza}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<ion-card>
 
+  <img src="../assets/pizza1.jpg"/>
+  <ion-card-content>
+    <ion-card-title>{{nomePizza}}</ion-card-title>
+    <ion-card-subtitle>{{descricaoPizza}}</ion-card-subtitle>
+    <br/>
+    <ion-card-title class="preco">R${{precoPizza}}</ion-card-title>
+  </ion-card-content>
+  <ion-item>
+    <ion-label position="floating">Deseja dividir a pizza com quantos friends?</ion-label>
+  </ion-item>
+  <!-- <div>
+    <ion-range pin="true" min="1" max="10" (ionChange)="atualizarComRange()" {{ngModel}}="divisor"></ion-range>
+  </div> -->
+  <ion-item>
+    <ion-button (click)="decremento()">-</ion-button>
+    <ion-input value="{{divisor}}" align="center"></ion-input>
+    <ion-button (click)="incremento()">+</ion-button>
+  </ion-item>
+
+</ion-card>
 </ion-content>

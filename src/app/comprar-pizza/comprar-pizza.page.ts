@@ -7,7 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./comprar-pizza.page.scss'],
 })
 export class ComprarPizzaPage implements OnInit {
-  idPizza: any;
+  idPizza;
+  nomePizza;
+  descricaoPizza;
+  precoPizza;
+  divisor=1;
+  precoPizzaFixo;
 
   constructor(private activatedRoute:ActivatedRoute) { 
     this.activatedRoute.snapshot.params.id
@@ -19,5 +24,32 @@ export class ComprarPizzaPage implements OnInit {
 
     ionViewDidEnter(){
       this.idPizza = this.activatedRoute.snapshot.params.id
+      let pizzaString = localStorage.getItem(this.idPizza)
+      let pizzaObjeto = JSON.parse(pizzaString)
+      this.nomePizza = pizzaObjeto.nomePizza
+      this.descricaoPizza = pizzaObjeto.descricaoPizza
+      this.precoPizza = pizzaObjeto.precoPizza
+      this.precoPizzaFixo = this.precoPizza
+
     }
+
+    incremento(){
+      this.divisor++
+      this.atualizarPreco()
+    }
+    decremento(){
+      if(this.divisor >1){
+      this.divisor--
+        this.atualizarPreco()
+
+      }
+    }
+
+ atualizarPreco(){
+   this.precoPizza = (parseFloat(this.precoPizzaFixo)/ this.divisor).toFixed(2)
+
+ }
+// atualizarComRange(){
+//    this.atulaizarPreco()
+//  }
 }
