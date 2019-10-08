@@ -29,6 +29,9 @@
     <ion-input value="{{divisor}}" align="center"></ion-input>
     <ion-button (click)="incremento()">+</ion-button>
   </ion-item>
+  <ion-button class="botao" expand="block" [routerLink]="['/finalizar-pizza',idPizza, divisor]"> Continuar
+    
+  </ion-button>
 
 </ion-card>
 </ion-content>
